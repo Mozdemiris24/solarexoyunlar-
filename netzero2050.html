@@ -1017,6 +1017,14 @@ try { bestScore = parseInt(localStorage.getItem('nz2050_best') || '0'); } catch(
 setInterval(() => {
   try { localStorage.setItem('nz2050_best', bestScore); } catch(e){}
 }, 2000);
+
+// ==================== GÜVENLİK ====================
+document.addEventListener('contextmenu', e => e.preventDefault());
+document.addEventListener('keydown', e => {
+  if (e.key === 'F12' || e.keyCode === 123) e.preventDefault();
+  if (e.ctrlKey && e.shiftKey && ['I', 'J', 'C'].includes(e.key.toUpperCase())) e.preventDefault();
+  if (e.ctrlKey && e.key.toUpperCase() === 'U') e.preventDefault();
+});
 </script>
 </body>
 </html>
